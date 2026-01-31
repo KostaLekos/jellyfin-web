@@ -1322,6 +1322,14 @@ export default function (view) {
                     showOsd(btnRewind);
                 }
                 break;
+            case ',': // frame seeking begin
+                playbackManager.rewindOneFrame(currentPlayer);
+                showOsd();
+                break;
+            case '.':
+                playbackManager.fastForwardOneFrame(currentPlayer);
+                showOsd();
+                break; // frame seeking end
             case 'f':
             case 'F':
                 if (!e.shiftKey) {
